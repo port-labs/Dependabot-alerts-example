@@ -78,6 +78,7 @@ jobs:
                       \"${{ matrix.severity }}_count\": $count
                   }
                 }")
+               echo $response 
               echo "STARTING NEXT REPO"
             done
             echo "DONE"
