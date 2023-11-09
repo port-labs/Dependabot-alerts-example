@@ -1,0 +1,56 @@
+{
+    "identifier": "dependabotScorecard",
+    "title": "Dependabot Alerts",
+    "rules": [
+      {
+        "identifier": "isNotCritical",
+        "title": "Basic",
+        "level": "Bronze",
+        "query": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "operator": "<=",
+              "property": "critcount",
+              "value": 2
+            }
+          ]
+        }
+      },
+      {
+        "identifier": "isNotHigh",
+        "title": "Silver",
+        "level": "Silver",
+        "query": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "operator": "<=",
+              "property": "high_count",
+              "value": 3
+            }
+          ]
+        }
+      },
+      {
+        "identifier": "isPerfect",
+        "title": "Perfect Repository",
+        "level": "Gold",
+        "query": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "operator": "<=",
+              "property": "medium_count",
+              "value": 1
+            },
+            {
+              "operator": "<=",
+              "property": "low_count",
+              "value": 1
+            }
+          ]
+        }
+      }
+    ]
+  }

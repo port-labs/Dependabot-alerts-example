@@ -1,0 +1,20 @@
+{
+    "identifier": "update_dependabot",
+    "title": "Update dependabot alerts",
+    "userInputs": {
+      "properties": {},
+      "required": [],
+      "order": []
+    },
+    "invocationMethod": {
+      "type": "GITHUB",
+      "omitPayload": false,
+      "omitUserInputs": false,
+      "reportWorkflowStatus": true,
+      "org": "<INSERT ORG>",
+      "repo": "<INSERT REPO>",
+      "workflow": "updateDependabot.yaml"
+    },
+    "trigger": "CREATE",
+    "requiredApproval": false
+}
