@@ -55,6 +55,11 @@ jobs:
                         \"property\": \"severity\",
                         \"operator\": \"=\",
                         \"value\": \"${{ matrix.severity }}\"
+                      },
+                      {
+                        \"property\": \"state\",
+                        \"operator\": \"=\",
+                        \"value\": \"open\"
                       }
                     ]
                   }"
