@@ -1,7 +1,7 @@
 # Dependabot-alerts-example
 This repository is an example for calculating the amount of Dependabot alerts a repository has, and creating a Scorecard.
 
-In this example, we use a Github workflow that sends requests to the search API of Port.
+In this example, we use a Github workflow that sends requests to Port's API.
 
 This guide is meant to be used after setting up the Github App. If you did not do that, head over to https://docs.getport.io/build-your-software-catalog/sync-data-to-catalog/git/github/installation
 
