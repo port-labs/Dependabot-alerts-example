@@ -11,7 +11,7 @@
           "conditions": [
             {
               "operator": "<=",
-              "property": "critcount",
+              "property": "critical_count",
               "value": 2
             }
           ]
