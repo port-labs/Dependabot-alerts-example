@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        severity: ['low', 'medium', 'high', 'critical']
+        sevirity: ['low', 'medium', 'high', 'critical']
     runs-on: ubuntu-latest
     steps:
       - name: calculate
@@ -22,7 +22,6 @@ jobs:
           access_token=$(curl -s --location --request POST "https://api.getport.io/v1/auth/access_token" \
             --header "Content-Type: application/json" \
             --data-raw "{\"clientId\": \"${{ secrets.PORT_CLIENT_ID }}\", \"clientSecret\": \"${{ secrets.PORT_CLIENT_SECRET }}\"}" | jq -r '.accessToken')
-          echo "Access Token: $access_token"
 
           repos=$(curl -s --request POST "https://api.getport.io/v1/entities/search?exclude_calculated_properties=false&attach_title_to_relation=false" \
             -H "accept: */*" \
@@ -54,20 +53,16 @@ jobs:
                       {
                         \"property\": \"severity\",
                         \"operator\": \"=\",
-                        \"value\": \"${{ matrix.severity }}\"
-                      },
-                      {
-                        \"property\": \"state\",
-                        \"operator\": \"=\",
-                        \"value\": \"open\"
+                        \"value\": \"${{ matrix.sevirity }}\"
                       }
                     ]
                   }"
                 )
-              echo "done searching"
-              echo "CALCULATING COUNT"
+              echo "Printing Get response"
+              echo $res
+              echo "Calculating alert count"
               count=$(echo $res | jq '.entities | length')
-              echo "UPDATING PORT"
+              echo "Updating Port"
               response=$(curl -s -X 'PATCH' \
                 "https://api.getport.io/v1/blueprints/repository/entities/$repo?create_missing_related_entities=false" \
                 -H 'accept: */*' \
@@ -75,11 +70,11 @@ jobs:
                 -H 'Content-Type: application/json' \
                 -d "{
                   \"properties\": {
-                      \"${{ matrix.severity }}_count\": $count
+                      \"${{ matrix.sevirity }}_count\": $count
                   }
                 }")
-               echo "PATCH RESPONSE"
-               echo $response 
-              echo "STARTING NEXT REPO"
+              echo "Printing Patch response"
+              echo $response
+              echo "Staring next repo"
             done
             echo "DONE"
