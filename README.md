@@ -1,5 +1,7 @@
 # Dependabot-alerts-example
-This repo is an example of how to aggregate the dependabot alerts data into the repositories
+This repository is an example for calculating the amount of Dependabot alerts a repository has, and creating a Scorecard.
+In this example, we use a Github workflow that sends requests to the search API of Port.
+
 
 ## How to use
 ### Resources
