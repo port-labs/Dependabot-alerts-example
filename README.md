@@ -21,7 +21,8 @@ If you decide to add them manually, make sure the properties identifier's are lo
 
 Lastly, add the content of port-app-config.yaml to the Github mapping config. This will map the Dependabot Alerts from Github into Port.
 
-## Running the workflow
+### Running the workflow
 After having everything set up, head to the Self Service page, and run the workflow. A Github job link will be added to it, where you can watch the logs of the workflow.
 
 When the job is complete, the repositories Catalog page will be updated with the alerts count and Scorecards.
+
