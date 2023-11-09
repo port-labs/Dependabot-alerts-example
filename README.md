@@ -17,7 +17,7 @@ Next, you will need to add the action to the repository's blueprint. In the buil
 
 Then, switch to the Scorecards tab, and add to the array the content of repositoryScorecard.
 
-If you already have a repository blueprint, you will need to add a few properties. You can copy the properties from the repository.json file, from low_count to critical_count, or you can create them yourself manually.
+If you already have a repository blueprint, you will need to add a few properties. You can copy the properties from the repositoryBlueprint, from low_count to critical_count, or you can create them yourself manually.
 
 If you decide to add them manually, make sure the properties identifier's are low_count to critical_count, accordingly.
 
