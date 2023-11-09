@@ -7,7 +7,7 @@ This guide is meant to be used after setting up the Github App. If you did not d
 
 ## How to use
 ### Resources
-In this repository you can find a "Resource" folder, which will include all of the blueprints you will use in this gui.de
+In this repository you can find a "Resource" folder, which will include all of the blueprints you will use in this guide.
 
 To start, you will need to add the blueprints to your catalog. If you already have a repository blueprint, you will need to change a few things in the workflow, which will be listed further below.
 
