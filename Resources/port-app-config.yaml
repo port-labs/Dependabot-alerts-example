@@ -1,0 +1,23 @@
+resources:
+  - kind: dependabot-alert
+    selector:
+      query: "true"
+    port:
+      entity:
+        mappings:
+          identifier: .repo.name + "-" + (.number | tostring)
+          title: .number | tostring
+          blueprint: '"dependabotAlert"'
+          properties:
+            state: .state
+            severity: .security_advisory.severity
+            packageName: .dependency.package.name
+            packageEcosystem: .dependency.package.ecosystem
+            manifestPath: .dependency.manifest_path
+            scope: .dependency.scope
+            ghsaID: .security_advisory.ghsa_id
+            cveID: .security_advisory.cve_id
+            url: .url
+            references: "[.security_advisory.references[].url]"
+          relations:
+            repository: .repo.name
